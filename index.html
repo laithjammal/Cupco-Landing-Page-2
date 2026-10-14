@@ -16,6 +16,8 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  // Consent Mode: nothing is stored until the visitor accepts (see consent.js)
+  gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});
   gtag('js', new Date());
   gtag('config', 'G-Z2G205R46D');
   gtag('config', 'G-HHQ4EQKQFZ');
@@ -167,6 +169,7 @@ h2{font-weight:800;font-size:clamp(2rem,4vw,3rem);line-height:1.1;letter-spacing
 footer{background:var(--navy);color:#b9cad6;padding:48px 0 90px;font-size:.9rem}
 .foot{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
 footer img{height:30px}
+.legal{margin-top:26px;padding-top:22px;border-top:1px solid rgba(255,255,255,.15);display:flex;flex-wrap:wrap;gap:8px 24px;font-size:.82rem}
 footer a:hover{color:#fff}
 .sticky{display:none}
 
@@ -373,7 +376,7 @@ footer a:hover{color:#fff}
         <div class="field"><label for="message">Message <span class="muted">(optional)</span></label><textarea id="message" name="message" rows="4" placeholder="Cup size, estimated quantity, timeline, artwork status..."></textarea></div>
         <button type="submit" class="btn btn-coral btn-block" id="submitBtn">Send my quote request</button>
         <p class="msg" id="formMsg">Please fix the highlighted fields and try again.</p>
-        <p class="note">We usually reply within one business day. Prefer to talk? Call <a href="tel:+61416888639"><b>0416 888 639</b></a>.</p>
+        <p class="note">By submitting you agree to our <a href="terms.html"><u>Terms</u></a> and <a href="privacy.html"><u>Privacy Policy</u></a>. We usually reply within one business day. Prefer to talk? Call <a href="tel:+61416888639"><b>0416 888 639</b></a>.</p>
       </form>
       <div class="success" id="success" role="status">
         <h3 id="sTitle">Request sent.</h3>
@@ -388,6 +391,9 @@ footer a:hover{color:#fff}
     <img src="assets/logo-white.png" alt="Cupco">
     <p>Custom printed paper cups, designed and made in Sydney.</p>
     <p><a href="tel:+61416888639">0416 888 639</a> · <a href="mailto:info@cupco.com.au">info@cupco.com.au</a></p>
+  </div>
+  <div class="wrap legal">
+    <a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a><a href="cookies.html">Cookie Policy</a><a href="refunds.html">Refund Policy</a><a href="#" data-cookie-settings>Cookie settings</a>
   </div>
 </footer>
 
@@ -461,5 +467,6 @@ footer a:hover{color:#fff}
   });
 })();
 </script>
+<script src="consent.js"></script>
 </body>
 </html>

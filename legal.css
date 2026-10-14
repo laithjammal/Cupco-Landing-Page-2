@@ -1,0 +1,19 @@
+:root{--navy:#20394B;--powder:#A9D9E9;--coral:#F2A095;--ivory:#FAF7F2;--muted:#5d7282}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:400 1rem/1.7 'Inter',system-ui,sans-serif;color:var(--navy);background:var(--ivory);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+header{background:var(--navy);padding:18px 28px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+header img{height:30px;display:block}
+header a.back{color:#fff;text-decoration:none;font:600 .92rem 'Poppins',sans-serif}
+main{max-width:780px;margin:0 auto;padding:56px 24px 80px}
+h1{font:800 clamp(2rem,5vw,2.8rem)/1.1 'Poppins',sans-serif;letter-spacing:-.5px;margin-bottom:8px}
+.updated{color:var(--muted);font-size:.9rem;margin-bottom:36px}
+h2{font:700 1.3rem 'Poppins',sans-serif;margin:38px 0 10px}
+p,ul{margin-bottom:14px}
+ul{padding-left:22px}li{margin-bottom:6px}
+.callout{background:var(--powder);border-radius:16px;padding:18px 22px;margin:22px 0}
+table{width:100%;border-collapse:collapse;margin:14px 0 22px;font-size:.93rem}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid rgba(141,175,185,.45);vertical-align:top}
+th{font-family:'Poppins',sans-serif}
+footer{background:var(--navy);color:#b9cad6;padding:30px 28px;font-size:.88rem;text-align:center}
+footer a{margin:0 10px;text-decoration:none}footer a:hover{color:#fff}
