@@ -113,8 +113,9 @@ h2{font-weight:800;font-size:clamp(2rem,4vw,3rem);line-height:1.1;letter-spacing
 .who b{display:block;font:600 .95rem 'Poppins'}.who span{font-size:.82rem;color:var(--muted)}
 .made{margin-top:64px;background:var(--navy);border-radius:var(--radius);padding:44px 34px 36px;color:#fff;text-align:center}
 .made p{font:600 1.1rem 'Poppins';margin-bottom:22px}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,260px));justify-content:center;gap:20px}
-.gallery figure{background:#fff;border-radius:18px;padding:18px 18px 14px}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+@media(max-width:900px){.gallery{grid-template-columns:1fr 1fr}}
+.gallery figure{background:#fff;border-radius:18px;padding:18px 18px 14px;min-width:0}
 .gallery img{width:100%;height:auto}
 .gallery figcaption{color:var(--navy);font:600 .88rem 'Poppins';margin-top:8px}
 
@@ -303,8 +304,10 @@ footer a:hover{color:#fff}
     <div class="made">
       <p>Cups we've printed</p>
       <div class="gallery">
+        <figure><img src="assets/example-horizon.webp" alt="Navy and gold custom printed cup for Horizon Summit" loading="lazy"><figcaption>Horizon Summit</figcaption></figure>
+        <figure><img src="assets/example-terra.webp" alt="Botanical custom printed cup for Terra Café" loading="lazy"><figcaption>Terra Café</figcaption></figure>
+        <figure><img src="assets/example-bloom.webp" alt="Coral and blue custom printed cup for Bloom Coffee" loading="lazy"><figcaption>Bloom Coffee</figcaption></figure>
         <figure><img src="assets/example-coastal.webp" alt="Custom printed white cup with a blue coastal illustration for Coastal Coffee Co." loading="lazy"><figcaption>Coastal Coffee Co.</figcaption></figure>
-        <!-- more examples to come -->
       </div>
     </div>
   </div>
