@@ -70,6 +70,25 @@ h2{font-weight:800;font-size:clamp(2rem,4vw,3rem);line-height:1.1;letter-spacing
 .trust-item i{flex:none;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.1);display:grid;place-items:center}
 .trust-item svg{width:22px;height:22px;stroke:var(--coral);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 
+
+/* ---------- WHY CUPCO ---------- */
+#why{background:var(--ivory);padding-bottom:40px}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
+.why{border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;background:var(--tint)}
+.why-top{display:flex;gap:18px;align-items:flex-start;padding:26px 26px 18px}
+.why-icon{flex:none;width:58px;height:58px;border-radius:50%;background:var(--dot);display:grid;place-items:center}
+.why-icon svg{width:28px;height:28px;stroke:var(--navy);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.why h3{font-size:1.3rem;font-weight:800;line-height:1.2;margin-bottom:6px}
+.why p{color:#4a6272;font-size:.95rem;line-height:1.55}
+.why-img{margin-top:auto;position:relative;height:190px}
+.why-img img{width:100%;height:100%;object-fit:cover;display:block;-webkit-mask-image:linear-gradient(#0000,#000 22%);mask-image:linear-gradient(#0000,#000 22%)}
+.why-img.contain img{object-fit:contain;object-position:left bottom;padding-left:26px;-webkit-mask-image:linear-gradient(#0000,#000 22%),linear-gradient(90deg,#000 78%,#0000);mask-image:linear-gradient(#0000,#000 22%),linear-gradient(90deg,#000 78%,#0000);-webkit-mask-composite:source-in;mask-composite:intersect}
+.why-badge{position:absolute;right:22px;bottom:30px;background:#fff;border-radius:50%;width:132px;height:132px;display:grid;place-content:center;text-align:center;font:600 .7rem 'Poppins';letter-spacing:.06em;text-transform:uppercase;color:var(--muted);box-shadow:0 8px 24px rgba(32,57,75,.1)}
+.why-badge svg{width:26px;height:26px;stroke:var(--coral);fill:none;stroke-width:1.7;margin:0 auto 6px}
+.why-badge b{display:block;font:800 1.15rem 'Poppins';color:var(--navy);letter-spacing:0;text-transform:none}
+@media(max-width:1000px){.why-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.why-grid{grid-template-columns:1fr}}
+
 /* ---------- PRICING ---------- */
 #pricing{background:var(--ivory)}
 .size-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
@@ -228,6 +247,43 @@ footer a:hover{color:#fff}
     <div class="trust-item"><i><svg viewBox="0 0 24 24"><path d="M12 22s8-7.5 8-13a8 8 0 1 0-16 0c0 5.5 8 13 8 13Z"/><circle cx="12" cy="9" r="3"/></svg></i>Made in Australia</div>
   </div>
 </div>
+
+<!-- WHY CUPCO -->
+<section id="why">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow" style="color:var(--dusty)">Why choose Cupco</span>
+      <h2>Everything your cafe needs.<br>Without the usual hassle.</h2>
+      <p class="lead">Custom branded coffee cups, made easy for independent cafes.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why" style="--tint:#f1f6ff;--dot:#dbe8fb">
+        <div class="why-top"><div class="why-icon"><svg viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></svg></div><div><h3>Low minimum orders</h3><p>Order from just one box. No massive commitments or excess stock.</p></div></div>
+        <div class="why-img"><img src="assets/why-minimum.jpg" alt="" loading="lazy"></div>
+      </div>
+      <div class="why" style="--tint:#fef0f2;--dot:#fbd9de">
+        <div class="why-top"><div class="why-icon"><svg viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div><div><h3>Fast turnaround</h3><p>Get your branded cups in as little as 7 days after artwork approval.</p></div></div>
+        <div class="why-img contain"><img src="assets/why-fast.jpg" alt="" loading="lazy"><div class="why-badge"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>As little as<b>7 days</b></div></div>
+      </div>
+      <div class="why" style="--tint:#f0faf7;--dot:#d2efe6">
+        <div class="why-top"><div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18c1.4 0 2-.9 2-1.8 0-1.2-1-1.6-1-2.7 0-.9.7-1.5 1.6-1.5H17a4 4 0 0 0 4-4C21 6.6 17 3 12 3z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7.5" r="1"/><circle cx="14.5" cy="7.5" r="1"/></svg></div><div><h3>Free design service</h3><p>Send us your logo or an idea and our team will create a custom cup design for you. Completely free.</p></div></div>
+        <div class="why-img"><img src="assets/why-design.jpg" alt="" loading="lazy"></div>
+      </div>
+      <div class="why" style="--tint:#fdf7f0;--dot:#f8e7cc">
+        <div class="why-top"><div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-7.5 8-13a8 8 0 1 0-16 0c0 5.5 8 13 8 13Z"/><circle cx="12" cy="9" r="3"/></svg></div><div><h3>Australian made</h3><p>Locally manufactured in Parramatta, so you get quality, consistency and shorter lead times.</p></div></div>
+        <div class="why-img"><img src="assets/why-aus.jpg" alt="" loading="lazy"></div>
+      </div>
+      <div class="why" style="--tint:#f2f0fe;--dot:#ddd8fa">
+        <div class="why-top"><div class="why-icon"><svg viewBox="0 0 24 24"><ellipse cx="9" cy="7" rx="6" ry="2.5"/><path d="M3 7v5c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5V7M3 12v5c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-5"/><path d="M15 9.5c3.3 0 6 1.1 6 2.5v5c0 1.4-2.7 2.5-6 2.5"/></svg></div><div><h3>Wholesale pricing</h3><p>High quality custom cups at competitive wholesale prices, designed for independent cafes.</p></div></div>
+        <div class="why-img"><img src="assets/why-wholesale.jpg" alt="" loading="lazy"></div>
+      </div>
+      <div class="why" style="--tint:#fef2e8;--dot:#fbdcc4">
+        <div class="why-top"><div class="why-icon"><svg viewBox="0 0 24 24"><path d="M20 4C9 4 4 9 4 16c0 2 .5 3 .5 3S6 20 8 20c7 0 12-5 12-16z"/><path d="M4 21c2-6 6-9 10-11"/></svg></div><div><h3>Just-in-time ordering</h3><p>Order what you need, when you need it. No need to tie up cash or store months of inventory.</p></div></div>
+        <div class="why-img"><img src="assets/why-jit.jpg" alt="" loading="lazy"></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- PRICING -->
 <section id="pricing">
