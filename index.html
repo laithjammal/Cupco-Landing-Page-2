@@ -224,7 +224,7 @@ footer a:hover{color:#fff}
     <div class="nav-links">
       <a href="#pricing">Pricing</a>
       <a href="#process">The Process</a>
-      <a href="#customers">Our Customers</a>
+      <a href="our-customers.html">Our Customers</a>
       <a href="#roi">ROI</a>
       <a href="#contact">Contact Us</a>
     </div>
@@ -357,6 +357,7 @@ footer a:hover{color:#fff}
       <div class="review"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“The samples gave us confidence before committing. What we approved was exactly what arrived.”</blockquote><div class="who"><div class="av">CJ</div><div><b>Callum J.</b><span>Café</span></div></div></div>
       <div class="review"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“There were no unexpected setup costs, which made budgeting for the campaign much easier.”</blockquote><div class="who"><div class="av">AT</div><div><b>Angus T.</b><span>Promotional event</span></div></div></div>
     </div>
+    <p class="center" style="margin-top:44px"><a class="btn btn-navy" href="our-customers.html">See how we help cafés and events &rarr;</a></p>
     <div class="made">
       <p>Cups we've printed</p>
       <div class="gallery">
@@ -454,7 +455,7 @@ footer a:hover{color:#fff}
     <p><a href="tel:+61416888639">0416 888 639</a> · <a href="mailto:info@cupco.com.au">info@cupco.com.au</a></p>
   </div>
   <div class="wrap legal">
-    <a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a><a href="cookies.html">Cookie Policy</a><a href="refunds.html">Refund Policy</a><a href="#" data-cookie-settings>Cookie settings</a>
+    <a href="our-customers.html">Our Customers</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a><a href="cookies.html">Cookie Policy</a><a href="refunds.html">Refund Policy</a><a href="#" data-cookie-settings>Cookie settings</a>
   </div>
 </footer>
 
@@ -462,6 +463,12 @@ footer a:hover{color:#fff}
 
 <script>
 (function(){
+  // --- Pre-tick the order type when arriving from the Our Customers page (?type=Cafe)
+  try{
+    var t=new URLSearchParams(location.search).get('type');
+    if(t){document.querySelectorAll('input[name="orderType"]').forEach(function(c){if(c.value===t)c.checked=true;});}
+  }catch(e){}
+
   // --- ROI calculator
   var cpd=document.getElementById('cpd'),seen=document.getElementById('seen');
   function calc(){
