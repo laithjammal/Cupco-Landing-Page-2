@@ -97,11 +97,10 @@ h2{font-weight:800;font-size:clamp(2rem,4vw,3rem);line-height:1.1;letter-spacing
 .size-card.pop{background:var(--navy);color:#fff}
 .size-card.pop .muted{color:#b9cad6}
 .badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--coral);color:#3b2a28;font:700 .72rem 'Poppins';letter-spacing:.1em;text-transform:uppercase;padding:5px 14px;border-radius:99px}
-.gauge{margin:18px auto 0;max-width:220px}
-.gbar{height:10px;border-radius:99px;background:rgba(141,175,185,.3);overflow:hidden}
-.gbar i{display:block;height:100%;border-radius:99px;background:var(--coral)}
-.gauge span{display:block;margin-top:8px;font:600 .82rem 'Poppins';letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-.size-card.pop .gbar{background:rgba(255,255,255,.18)}.size-card.pop .gauge span{color:#b9cad6}
+.cap{display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:8px 18px;border-radius:99px;background:var(--ivory);border:1.5px solid rgba(141,175,185,.5)}
+.cap svg{width:16px;height:16px;fill:var(--coral);stroke:none}
+.cap b{font:600 .9rem 'Poppins';letter-spacing:.04em;color:var(--navy)}
+.size-card.pop .cap{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.25)}.size-card.pop .cap b{color:#fff}
 .size-card h3{font-size:2.2rem;font-weight:800}
 .muted{color:var(--muted)}
 .size-card ul{list-style:none;margin:20px 0 26px;text-align:left;font-size:.95rem}
@@ -312,20 +311,20 @@ footer a:hover{color:#fff}
     <div class="size-grid">
       <div class="size-card">
         <h3>8oz</h3><p class="muted">Small · espresso &amp; flat whites</p>
-        <div class="gauge" aria-label="237 ml capacity"><div class="gbar"><i style="width:50%"></i></div><span>237 ml</span></div>
+        <div class="cap" aria-label="237 ml capacity"><svg viewBox="0 0 24 24"><path d="M12 3s6 6.2 6 10.5A6 6 0 0 1 6 13.5C6 9.2 12 3 12 3z"/></svg><b>237 ml</b></div>
         <ul><li>Fully custom print</li><li>Free digital mockup</li><li>Single or double wall</li></ul>
         <a class="btn btn-navy btn-block" href="#contact" data-size="8oz">Get a quote</a>
       </div>
       <div class="size-card pop">
         <span class="badge">Most popular</span>
         <h3>12oz</h3><p class="muted">Medium · the café standard</p>
-        <div class="gauge" aria-label="355 ml capacity"><div class="gbar"><i style="width:75%"></i></div><span>355 ml</span></div>
+        <div class="cap" aria-label="355 ml capacity"><svg viewBox="0 0 24 24"><path d="M12 3s6 6.2 6 10.5A6 6 0 0 1 6 13.5C6 9.2 12 3 12 3z"/></svg><b>355 ml</b></div>
         <ul><li>Fully custom print</li><li>Free digital mockup</li><li>Single or double wall</li></ul>
         <a class="btn btn-coral btn-block" href="#contact" data-size="12oz">Get a quote</a>
       </div>
       <div class="size-card">
         <h3>16oz</h3><p class="muted">Large · lattes &amp; long blacks</p>
-        <div class="gauge" aria-label="473 ml capacity"><div class="gbar"><i style="width:100%"></i></div><span>473 ml</span></div>
+        <div class="cap" aria-label="473 ml capacity"><svg viewBox="0 0 24 24"><path d="M12 3s6 6.2 6 10.5A6 6 0 0 1 6 13.5C6 9.2 12 3 12 3z"/></svg><b>473 ml</b></div>
         <ul><li>Fully custom print</li><li>Free digital mockup</li><li>Single or double wall</li></ul>
         <a class="btn btn-navy btn-block" href="#contact" data-size="16oz">Get a quote</a>
       </div>
