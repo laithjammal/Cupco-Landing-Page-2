@@ -62,7 +62,7 @@ h2{font-weight:800;font-size:clamp(2rem,4vw,3rem);line-height:1.1;letter-spacing
 footer{background:var(--navy);color:#b9cad6;padding:30px 28px 40px;font-size:.88rem;text-align:center;border-top:1px solid rgba(255,255,255,.12)}
 footer a{margin:0 10px;text-decoration:none}footer a:hover{color:#fff}
 @media(max-width:1000px){.seg-grid{grid-template-columns:1fr}.seg-side{order:-1}.gal{max-width:520px}}
-@media(max-width:900px){.nav{grid-template-columns:auto 1fr auto;padding:14px 20px;gap:12px}.nav-links,.nav-right .nl{display:none}.nav-right{grid-column:3}.call{padding:8px 22px}}
+@media(max-width:900px){.nav{grid-template-columns:auto 1fr auto;padding:14px 20px;gap:12px}.nav-links,.nav-right .nl,.nav-right .dd{display:none}.nav-right{grid-column:3}.call{padding:8px 22px}}
 @media(max-width:640px){.wrap{padding:0 20px}.seg{padding:64px 0}.two{grid-template-columns:1fr}.hero{padding:60px 0 52px}}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:44px}
 .step{background:var(--ivory);border-radius:var(--radius);padding:30px 24px}
@@ -84,12 +84,22 @@ footer a{margin:0 10px;text-decoration:none}footer a:hover{color:#fff}
 .gal2 figcaption{font:600 .85rem 'Poppins';margin-top:6px;text-align:center}
 @media(max-width:1000px){.steps{grid-template-columns:1fr 1fr}.split{grid-template-columns:1fr}.cards3{grid-template-columns:1fr}}
 @media(max-width:640px){.steps{grid-template-columns:1fr}.gal2{grid-template-columns:1fr 1fr}.facts th,.facts td{display:block;width:100%;padding:10px 18px}.facts th{border-bottom:0;padding-bottom:0}}
+
+@media(min-width:901px) and (max-width:1180px){.nav{padding-left:24px;padding-right:24px}.nav-links,.nav-right{gap:18px;font-size:14px}.call{padding:9px 20px;font-size:14px}}
+.dd{position:relative}
+.dd-btn{background:none;border:0;color:inherit;font:inherit;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px;padding:6px 0}
+.dd-btn svg{transition:transform .15s}.dd.open .dd-btn svg,.dd:hover .dd-btn svg{transform:rotate(180deg)}
+.dd-menu{display:none;position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%);min-width:200px;background:#fff;border-radius:14px;box-shadow:0 14px 40px rgba(32,57,75,.22);padding:8px;z-index:30}
+.dd-menu::before{content:"";position:absolute;left:0;right:0;top:-16px;height:16px}
+.dd:hover .dd-menu,.dd:focus-within .dd-menu,.dd.open .dd-menu{display:block}
+.dd-menu a{display:block;padding:11px 16px;border-radius:10px;color:#20394B!important;font-weight:600;font-size:.95rem;opacity:1!important}
+.dd-menu a:hover{background:#A9D9E9}
 </style>
 </head><body>
 <nav class="nav">
   <div class="nav-links"><a href="index.html#pricing">Pricing</a><a href="index.html#process">The Process</a><a href="our-customers.html">Our Customers</a></div>
   <a class="logo" href="index.html" aria-label="Cupco"><img src="assets/logo-white.png" alt="Cupco"></a>
-  <div class="nav-right"><a class="nl" href="index.html#roi">ROI</a><a class="nl" href="index.html#contact">Contact Us</a><a class="call" href="tel:+61416888639">Call Now</a></div>
+  <div class="nav-right"><a class="nl" href="index.html#roi">ROI</a><div class="dd"><button type="button" class="dd-btn" aria-expanded="false" aria-haspopup="true">Company <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><div class="dd-menu"><a href="manufacturing.html">Manufacturing</a><a href="environment.html">Environment</a></div></div><a class="nl" href="index.html#contact">Contact Us</a><a class="call" href="tel:+61416888639">Call Now</a></div>
 </nav>
 
 <header class="hero"><div class="wrap">
@@ -167,4 +177,11 @@ footer a{margin:0 10px;text-decoration:none}footer a:hover{color:#fff}
 <p style="margin-top:12px">&copy; 2026 Cupco. All rights reserved. <a href="mailto:info@cupco.com.au">info@cupco.com.au</a></p>
 </footer>
 <script src="consent.js"></script>
+<script>
+(function(){var d=document.querySelector('.dd');if(!d)return;var b=d.querySelector('.dd-btn');
+function set(o){d.classList.toggle('open',o);b.setAttribute('aria-expanded',o?'true':'false');}
+b.addEventListener('click',function(e){e.stopPropagation();set(!d.classList.contains('open'));});
+document.addEventListener('click',function(e){if(!d.contains(e.target))set(false);});
+document.addEventListener('keydown',function(e){if(e.key==='Escape')set(false);});})();
+</script>
 </body></html>
