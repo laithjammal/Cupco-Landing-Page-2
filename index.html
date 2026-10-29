@@ -185,6 +185,10 @@ h2{font-weight:800;font-size:clamp(2rem,4vw,3rem);line-height:1.1;letter-spacing
 .pills input:checked+span{background:var(--navy);border-color:var(--navy);color:#fff}
 .pills input:focus-visible+span{outline:2px solid var(--blue)}
 .form-card .btn{margin-top:26px}
+.badges{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;margin-top:20px;padding-top:18px;border-top:1px solid #e6eef2;font:500 .84rem 'Poppins'}
+.badges li{display:flex;align-items:center;gap:8px;color:var(--navy)}
+.badges svg{flex:none;width:20px;height:20px;padding:3px;border-radius:50%;background:#dff1e8;stroke:#2f7a55;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+@media(max-width:400px){.badges{grid-template-columns:1fr}}
 .msg{display:none;color:#d9534f;font-size:.88rem;margin-top:12px}.msg.show{display:block}
 .note{font-size:.82rem;color:var(--muted);margin-top:14px;text-align:center}
 .success{display:none;text-align:center;padding:34px 0}.success.show{display:block}
@@ -422,26 +426,18 @@ footer a:hover{color:#fff}
       <form id="quoteForm" novalidate>
         <h3>Get a free quote</h3>
         <p class="muted" style="font-size:.9rem">Free quote, no obligation.</p>
-        <div class="row">
-          <div class="field"><label for="firstName">First name*</label><input type="text" id="firstName" name="firstName" required autocomplete="given-name"><p class="err">Please enter your first name.</p></div>
-          <div class="field"><label for="lastName">Last name*</label><input type="text" id="lastName" name="lastName" required autocomplete="family-name"><p class="err">Please enter your last name.</p></div>
-        </div>
+        <div class="field"><label for="fullName">Name*</label><input type="text" id="fullName" name="name" required autocomplete="name"><p class="err">Please enter your name.</p></div>
         <div class="row">
           <div class="field"><label for="phone">Phone*</label><input type="tel" id="phone" name="phone" required autocomplete="tel"><p class="err">Please enter a valid phone number.</p></div>
-          <div class="field"><label for="email">Email*</label><input type="email" id="email" name="email" required autocomplete="email"><p class="err">Please enter a valid email address.</p></div>
+          <div class="field"><label for="email">Email</label><input type="email" id="email" name="email" autocomplete="email"><p class="err">Please enter a valid email address.</p></div>
         </div>
-        <div class="field"><label for="business">Business name*</label><input type="text" id="business" name="business" required autocomplete="organization"><p class="err">Please enter your business name.</p></div>
-        <div class="field" id="orderTypeField">
-          <label>What's it for?*</label>
-          <div class="pills">
-            <label><input type="checkbox" name="orderType" value="Cafe"><span>Café</span></label>
-            <label><input type="checkbox" name="orderType" value="Promotional Event"><span>Promotional event</span></label>
-            <label><input type="checkbox" name="orderType" value="Personal Event"><span>Personal event</span></label>
-          </div>
-          <p class="err">Please select at least one option.</p>
-        </div>
+        <input type="hidden" id="orderTypeHidden" name="orderType" value="">
         <div class="field"><label for="message">Message <span class="muted">(optional)</span></label><textarea id="message" name="message" rows="4" placeholder="Cup size, estimated quantity, timeline, artwork status..."></textarea></div>
         <button type="submit" class="btn btn-coral btn-block" id="submitBtn">Send my quote request</button>
+        <ul class="badges" aria-label="Why you can trust Cupco">
+          <li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>Australian made</li>
+          <li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>200+ happy customers</li>
+        </ul>
         <p class="msg" id="formMsg">Please fix the highlighted fields and try again.</p>
         <p class="note">By submitting you agree to our <a href="terms.html"><u>Terms</u></a> and <a href="privacy.html"><u>Privacy Policy</u></a>. We usually reply within one business day. Prefer to talk? Call <a href="tel:+61416888639"><b>0416 888 639</b></a>.</p>
       </form>
@@ -471,7 +467,7 @@ footer a:hover{color:#fff}
   // --- Pre-tick the order type when arriving from the Our Customers page (?type=Cafe)
   try{
     var t=new URLSearchParams(location.search).get('type');
-    if(t){document.querySelectorAll('input[name="orderType"]').forEach(function(c){if(c.value===t)c.checked=true;});}
+    if(t){var h=document.getElementById('orderTypeHidden');if(h)h.value=t;}
   }catch(e){}
 
   // --- ROI calculator
@@ -494,12 +490,11 @@ footer a:hover{color:#fff}
   var FORM_ENDPOINT='https://formspree.io/f/xwlkqlrv';
   var ADS_CONVERSION_ID=''; // Google Ads send_to value, e.g. 'AW-123456789/AbC-D_efGhIjKlMnOp'
   var form=document.getElementById('quoteForm'),msg=document.getElementById('formMsg'),
-      btn=document.getElementById('submitBtn'),ot=document.getElementById('orderTypeField');
+      btn=document.getElementById('submitBtn');
 
-  function check(el){var ok=el.checkValidity()&&el.value.trim()!=='';el.closest('.field').classList.toggle('error',!ok);return ok;}
-  function checkType(){var ok=ot.querySelectorAll('input:checked').length>0;ot.classList.toggle('error',!ok);return ok;}
-  form.querySelectorAll('input[required]').forEach(function(f){f.addEventListener('blur',function(){check(f)});});
-  ot.querySelectorAll('input').forEach(function(c){c.addEventListener('change',checkType)});
+  // Required fields must be filled; optional fields (email) are only checked for format when filled
+  function check(el){var ok=el.checkValidity()&&(!el.required||el.value.trim()!=='');el.closest('.field').classList.toggle('error',!ok);return ok;}
+  form.querySelectorAll('input[type=text],input[type=tel],input[type=email]').forEach(function(f){f.addEventListener('blur',function(){check(f)});});
 
   function done(viaEmail){
     document.getElementById('sTitle').textContent=viaEmail?'Your email is ready.':'Request sent.';
@@ -511,15 +506,14 @@ footer a:hover{color:#fff}
 
   form.addEventListener('submit',function(e){
     e.preventDefault();
-    var ok=true;form.querySelectorAll('input[required]').forEach(function(f){if(!check(f))ok=false});
-    if(!checkType())ok=false;
+    var ok=true;form.querySelectorAll('input[type=text],input[type=tel],input[type=email]').forEach(function(f){if(!check(f))ok=false});
     if(!ok){msg.classList.add('show');var bad=form.querySelector('.error input');if(bad)bad.focus();return;}
     msg.classList.remove('show');
-    var data=new FormData(form),types=data.getAll('orderType').join(', ');
+    var data=new FormData(form),types=data.get('orderType')||'';
     btn.disabled=true;btn.textContent='Sending...';
-    data.append('orderTypeSummary',types);
-    data.append('_subject','Quote request from '+data.get('firstName')+' '+data.get('lastName')+' ('+data.get('business')+') - LP site 2');
-    data.append('_replyto',data.get('email'));
+    if(types)data.append('orderTypeSummary',types);
+    data.append('_subject','Quote request from '+data.get('name')+' - LP site 2');
+    if(data.get('email'))data.append('_replyto',data.get('email'));
     data.append('source','LP.cupco.com.au');
 
     fetch(FORM_ENDPOINT,{method:'POST',body:data,headers:{'Accept':'application/json'}})
@@ -530,9 +524,9 @@ footer a:hover{color:#fff}
       })
       .catch(function(){
         // never dead-end a paid click: fall back to a pre-filled email
-        var body='Name: '+data.get('firstName')+' '+data.get('lastName')+'\nBusiness: '+data.get('business')+'\nPhone: '+data.get('phone')+'\nEmail: '+data.get('email')+'\nWhat it\'s for: '+types+'\n\nMessage: '+(data.get('message')||'(none)');
+        var body='Name: '+data.get('name')+'\nPhone: '+data.get('phone')+'\nEmail: '+(data.get('email')||'(none)')+(types?'\nWhat it\'s for: '+types:'')+'\n\nMessage: '+(data.get('message')||'(none)');
         var a=document.createElement('a');
-        a.href='mailto:info@cupco.com.au?subject='+encodeURIComponent('Quote request from '+data.get('firstName')+' '+data.get('lastName'))+'&body='+encodeURIComponent(body);
+        a.href='mailto:info@cupco.com.au?subject='+encodeURIComponent('Quote request from '+data.get('name'))+'&body='+encodeURIComponent(body);
         a.target='_blank';a.rel='noopener';document.body.appendChild(a);a.click();document.body.removeChild(a);
         done(true);
       });
