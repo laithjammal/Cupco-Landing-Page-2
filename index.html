@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Custom Printed Paper Cups Sydney | Cupco</title>
-<meta name="description" content="Custom printed paper cups made in Sydney. Ready in 10 days, no minimum order, free digital mockups. Get a free quote today.">
+<meta name="description" content="Custom printed paper cups made in Sydney. Ready in 10 days, no minimum order, free digital mockups. Get your price today.">
 <!-- TEMPORARY: staging. Remove this tag when LP.cupco.com.au goes live or the page will never appear in search. -->
 <meta name="robots" content="noindex, nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -183,6 +183,43 @@ h2{font-weight:800;font-size:clamp(2rem,4vw,3rem);line-height:1.1;letter-spacing
 @media(max-width:1000px){.bn-grid{grid-template-columns:1fr}}
 @media(max-width:640px){.bblock{padding:64px 0}}
 
+
+/* ---------- COMPARE / INCLUDED / FAQ ---------- */
+.cta-row{text-align:center;margin-top:44px}
+#compare{background:#fff}
+.vs{max-width:900px;margin:48px auto 0;border-radius:var(--radius);overflow:hidden;box-shadow:0 10px 36px rgba(32,57,75,.1);background:#fff}
+.vs-head,.vs-row{display:grid;grid-template-columns:.8fr 1.2fr 1.2fr}
+.vs-head span{padding:16px 24px;font:600 .8rem 'Poppins';letter-spacing:.12em;text-transform:uppercase;color:var(--muted);background:#f1ebe6}
+.vs-head .us{background:var(--navy);color:#fff}
+.vs-row b{padding:20px 24px;font:600 .95rem 'Poppins';display:flex;align-items:center;border-top:1px solid #ece6df}
+.vs-row span{padding:20px 24px 20px 54px;position:relative;border-top:1px solid #ece6df;font-size:.97rem;display:flex;align-items:center}
+.vs-row .no{color:#7a6560;background:#faf5f2}
+.vs-row .yes{background:var(--powder);font-weight:500}
+.vs-row svg{position:absolute;left:22px;top:50%;margin-top:-10px;width:20px;height:20px;padding:3px;border-radius:50%;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.vs-row .no svg{background:#f3d9d4;stroke:#c25a4b}.vs-row .yes svg{background:var(--navy);stroke:#fff}
+#included{background:var(--ivory)}
+.inc-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:center}
+.inc{list-style:none;margin-top:28px}
+.inc li{position:relative;padding:13px 0 13px 40px;border-top:1px solid rgba(141,175,185,.35)}
+.inc li:last-child{border-bottom:1px solid rgba(141,175,185,.35)}
+.inc svg{position:absolute;left:0;top:14px;width:24px;height:24px;padding:4px;border-radius:50%;background:var(--coral);stroke:#3b2a28;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.inc b{font-family:'Poppins'}
+.proof{background:var(--navy);color:#fff;border-radius:var(--radius);padding:38px 34px;text-align:center}
+.proof i{display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.1);margin:0 auto 18px}
+.proof svg{width:32px;height:32px;stroke:var(--coral);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.proof h3{font-size:1.5rem;font-weight:800}.proof p{color:#b9cad6;margin:10px 0 24px}
+.proof-link{display:block;margin-top:16px;font-size:.85rem;color:#b9cad6;text-decoration:underline}
+.proofnote i{background:var(--powder)}.proofnote svg{stroke:var(--navy)}
+#faq{background:#fff}
+.faq{margin-top:44px}
+.faq details{background:var(--ivory);border-radius:16px;padding:0 24px;margin-bottom:12px}
+.faq summary{cursor:pointer;padding:20px 0;font:600 1.02rem 'Poppins';list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}.faq summary::after{content:"+";color:#e0786a;font-size:1.4rem;line-height:1}
+.faq details[open] summary::after{content:"–"}.faq details p{padding:0 0 20px;color:var(--muted)}
+.faq a{text-decoration:underline}
+@media(max-width:1000px){.inc-grid{grid-template-columns:1fr;gap:36px}}
+@media(max-width:640px){.vs-head{display:none}.vs-row{grid-template-columns:1fr}.vs-row b{padding:16px 20px 4px;border-top:1px solid #ece6df;background:#fff}.vs-row span{border-top:0;padding:12px 20px 12px 52px}.vs-row .no{padding-top:8px}.cta-row{margin-top:32px}}
+
 /* ---------- ROI ---------- */
 #roi{background:var(--navy);color:#fff}
 #roi .lead{color:#b9cad6}
@@ -339,6 +376,7 @@ footer a:hover{color:#fff}
       </div>
     </div>
   </div>
+  <div class="wrap"><p class="cta-row"><a class="btn btn-coral" href="#contact">Get your price</a></p></div>
 </section>
 
 <!-- REVIEWS -->
@@ -412,6 +450,25 @@ footer a:hover{color:#fff}
   </div>
 </section>
 
+<!-- COMPARE -->
+<section id="compare">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Cupco vs the usual supplier</span>
+      <h2>Custom cups without the catch.</h2>
+      <p class="lead">Most cup suppliers are set up for big chains. Here's how that looks for an independent café.</p>
+    </div>
+    <div class="vs" role="table" aria-label="Cupco compared with a typical supplier">
+      <div class="vs-head" role="row"><span role="columnheader"></span><span role="columnheader">The usual supplier</span><span role="columnheader" class="us">Cupco</span></div>
+      <div class="vs-row" role="row"><b role="rowheader">Lead time</b><span role="cell" class="no"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>Up to 12 weeks</span><span role="cell" class="yes"><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>Ready in 10 days</span></div>
+      <div class="vs-row" role="row"><b role="rowheader">Minimum order</b><span role="cell" class="no"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>Massive minimum quantities</span><span role="cell" class="yes"><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>No minimum. Order from one box</span></div>
+      <div class="vs-row" role="row"><b role="rowheader">Up-front cost</b><span role="cell" class="no"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>Big deposits before they start</span><span role="cell" class="yes"><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>No big deposits, no setup fees</span></div>
+      <div class="vs-row" role="row"><b role="rowheader">Storage</b><span role="cell" class="no"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>Storage fees, or you store it yourself</span><span role="cell" class="yes"><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>Order what you need, nothing to store</span></div>
+    </div>
+    <p class="cta-row"><a class="btn btn-coral" href="#contact">Get your price</a></p>
+  </div>
+</section>
+
 <!-- PRICING -->
 <section id="pricing">
   <div class="wrap">
@@ -427,20 +484,20 @@ footer a:hover{color:#fff}
         <h3>8oz</h3><p class="muted">Small · espresso &amp; flat whites</p>
         <div class="cap" aria-label="237 ml capacity"><svg viewBox="0 0 24 24"><path d="M12 3s6 6.2 6 10.5A6 6 0 0 1 6 13.5C6 9.2 12 3 12 3z"/></svg><b>237 ml</b></div>
         <ul><li>Fully custom print</li><li>Free digital mockup</li><li>Single or double wall</li></ul>
-        <a class="btn btn-navy btn-block" href="#contact" data-size="8oz">Get a quote</a>
+        <a class="btn btn-navy btn-block" href="#contact" data-size="8oz">Get your price</a>
       </div>
       <div class="size-card pop">
         <span class="badge">Most popular</span>
         <h3>12oz</h3><p class="muted">Medium · the café standard</p>
         <div class="cap" aria-label="355 ml capacity"><svg viewBox="0 0 24 24"><path d="M12 3s6 6.2 6 10.5A6 6 0 0 1 6 13.5C6 9.2 12 3 12 3z"/></svg><b>355 ml</b></div>
         <ul><li>Fully custom print</li><li>Free digital mockup</li><li>Single or double wall</li></ul>
-        <a class="btn btn-coral btn-block" href="#contact" data-size="12oz">Get a quote</a>
+        <a class="btn btn-coral btn-block" href="#contact" data-size="12oz">Get your price</a>
       </div>
       <div class="size-card">
         <h3>16oz</h3><p class="muted">Large · lattes &amp; long blacks</p>
         <div class="cap" aria-label="473 ml capacity"><svg viewBox="0 0 24 24"><path d="M12 3s6 6.2 6 10.5A6 6 0 0 1 6 13.5C6 9.2 12 3 12 3z"/></svg><b>473 ml</b></div>
         <ul><li>Fully custom print</li><li>Free digital mockup</li><li>Single or double wall</li></ul>
-        <a class="btn btn-navy btn-block" href="#contact" data-size="16oz">Get a quote</a>
+        <a class="btn btn-navy btn-block" href="#contact" data-size="16oz">Get your price</a>
       </div>
     </div>
 
@@ -448,7 +505,33 @@ footer a:hover{color:#fff}
       <div class="wall"><h4>Single wall</h4><p>Lighter and easier to store. The cost-effective choice for grab-and-go drinks.</p></div>
       <div class="wall"><h4>Double wall</h4><p>Two layers keep drinks hot and hands cool, with a thicker, more premium feel.</p></div>
     </div>
-    <p class="price-note muted">Your price per cup depends on quantity, cup size and wall type. The more you order, the lower the price per cup, so larger runs save you more. Not sure what you need? Tell us your quantity and we'll send an exact price, usually the same day.</p>
+    <p class="price-note muted">Your price per cup depends on quantity, cup size and wall type. The more you order, the lower the price per cup, so larger runs save you more. Not sure what you need? Tell us your quantity and we'll reply in minutes with an exact price.</p>
+  </div>
+</section>
+
+<!-- INCLUDED -->
+<section id="included">
+  <div class="wrap inc-grid">
+    <div>
+      <span class="eyebrow">Every order</span>
+      <h2>What's included.</h2>
+      <p class="lead">No add-ons and no surprises. This is what comes with every order, whatever the size.</p>
+      <ul class="inc">
+        <li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg><b>Free design support.</b> Send a logo or an idea.</li>
+        <li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg><b>Free digital mockup.</b> See it before you order.</li>
+        <li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg><b>No minimum order.</b> From one box.</li>
+        <li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg><b>No setup fees.</b></li>
+        <li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg><b>Ready in 10 days</b> after mockup approval.</li>
+        <li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg><b>Made in Australia.</b></li>
+      </ul>
+    </div>
+    <div class="proof">
+      <i><svg viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.4 7.5 9.5 4.4-1.1 7.5-4.9 7.5-9.5V6z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></i>
+      <h3>Proof before print</h3>
+      <p>Nothing is printed until you approve your free mockup. If your cups don't match the proof you approved, we reprint them free.</p>
+      <a class="btn btn-coral" href="#contact">Get your free mockup</a>
+      <a class="proof-link" href="refunds.html">See our reprint policy</a>
+    </div>
   </div>
 </section>
 
@@ -543,16 +626,35 @@ footer a:hover{color:#fff}
   </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrap" style="max-width:860px">
+    <div class="center"><span class="eyebrow">Questions</span><h2>Frequently asked questions.</h2></div>
+    <div class="faq">
+      <details><summary>Is there really no minimum order?</summary><p>Yes. There's no minimum, so you can order from just one box and buy only what your café or event needs.</p></details>
+      <details><summary>How long does it take?</summary><p>Your cups are ready in 10 days after you approve your mockup. Many suppliers quote up to 12 weeks.</p></details>
+      <details><summary>Do I need to pay a big deposit or store the cups?</summary><p>No. There are no setup fees and no big up-front deposits, and you order what you need so there's nothing to store. Many suppliers charge large deposits and storage fees, or leave you to store the stock yourself.</p></details>
+      <details><summary>I don't have a design. Can you help?</summary><p>Yes, and it's free. Send us your logo or just an idea and our team will turn it into a print-ready cup design.</p></details>
+      <details><summary>Can I see my cups before they are printed?</summary><p>Yes. You get a free digital mockup to approve first, and nothing is printed until you say so. If your cups don't match the proof you approved, we reprint them free.</p></details>
+      <details><summary>What sizes and cup types do you make?</summary><p>8oz, 12oz and 16oz cups, in single wall or double wall, printed in full colour.</p></details>
+      <details><summary>Are the cups compostable?</summary><p>Our cups are designed for industrial composting. <a href="environment.html">Read more on our environment page.</a></p></details>
+      <details><summary>Where are the cups made?</summary><p>Your cups are designed, printed and made in Australia.</p></details>
+    </div>
+    <p class="cta-row"><a class="btn btn-coral" href="#contact">Get your price</a></p>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="wrap contact-grid">
     <div>
       <span class="eyebrow">Get started</span>
       <h2>Let's get your cups on order.</h2>
-      <p class="lead">Fill out the form, call, or send an email. We'll be in contact with you today.</p>
+      <p class="lead">Fill out the form, call, or send an email. We reply in minutes.</p>
       <div class="methods">
         <a class="method" href="tel:+61416888639"><i><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></i><span><small>Call</small><b>0416 888 639</b></span></a>
         <a class="method" href="mailto:info@cupco.com.au"><i><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg></i><span><small>Email</small><b>info@cupco.com.au</b></span></a>
+        <div class="method proofnote"><i><svg viewBox="0 0 24 24"><path d="M12 3 4.5 6v5.5c0 4.6 3.1 8.4 7.5 9.5 4.4-1.1 7.5-4.9 7.5-9.5V6z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></i><span><small>Proof before print</small><b>Nothing prints until you approve your free mockup</b></span></div>
         <div class="method"><i><svg viewBox="0 0 24 24"><path d="M12 22s8-7.5 8-13a8 8 0 1 0-16 0c0 5.5 8 13 8 13Z"/><circle cx="12" cy="9" r="3"/></svg></i><span><small>Location</small><b>Sydney, NSW, Australia</b></span></div>
       </div>
     </div>
@@ -574,7 +676,7 @@ footer a:hover{color:#fff}
           <li><svg viewBox="0 0 24 24"><path d="m5 12 5 5 9-10"/></svg>No obligations</li>
         </ul>
         <p class="msg" id="formMsg">Please fix the highlighted fields and try again.</p>
-        <p class="note">By submitting you agree to our <a href="terms.html"><u>Terms</u></a> and <a href="privacy.html"><u>Privacy Policy</u></a>. We usually reply within one business day. Prefer to talk? Call <a href="tel:+61416888639"><b>0416 888 639</b></a>.</p>
+        <p class="note">By submitting you agree to our <a href="terms.html"><u>Terms</u></a> and <a href="privacy.html"><u>Privacy Policy</u></a>. We reply in minutes. Prefer to talk? Call <a href="tel:+61416888639"><b>0416 888 639</b></a>.</p>
       </form>
       <div class="success" id="success" role="status">
         <h3 id="sTitle">Request sent.</h3>
@@ -596,7 +698,7 @@ footer a:hover{color:#fff}
   <p class="wrap copy-line">&copy; 2026 Cupco. All rights reserved.</p>
 </footer>
 
-<div class="sticky"><a class="a" href="tel:+61416888639">Call now</a><a class="b" href="#contact">Get a quote</a></div>
+<div class="sticky"><a class="a" href="tel:+61416888639">Call now</a><a class="b" href="#contact">Get your price</a></div>
 
 <script>
 (function(){
@@ -629,7 +731,6 @@ footer a:hover{color:#fff}
 
   // --- Quote form (same Formspree endpoint and GA4 lead event as the main landing page)
   var FORM_ENDPOINT='https://formspree.io/f/xwlkqlrv';
-  var ADS_CONVERSION_ID=''; // Google Ads send_to value, e.g. 'AW-123456789/AbC-D_efGhIjKlMnOp'
   var form=document.getElementById('quoteForm'),msg=document.getElementById('formMsg'),
       btn=document.getElementById('submitBtn');
 
@@ -660,8 +761,9 @@ footer a:hover{color:#fff}
     fetch(FORM_ENDPOINT,{method:'POST',body:data,headers:{'Accept':'application/json'}})
       .then(function(r){
         if(!r.ok)throw new Error('HTTP '+r.status);
-        if(typeof gtag==='function'){gtag('event','generate_lead');if(ADS_CONVERSION_ID)gtag('event','conversion',{send_to:ADS_CONVERSION_ID});}
-        done(false);
+        // The thank-you page records the lead (GA4 event + Google Ads conversion) once, then clears this flag
+        try{sessionStorage.setItem('cupco_lead','1');}catch(e){}
+        window.location.href='thank-you.html';
       })
       .catch(function(){
         // never dead-end a paid click: fall back to a pre-filled email
