@@ -52,11 +52,12 @@ h2{font-weight:800;font-size:clamp(2rem,4vw,3rem);line-height:1.1;letter-spacing
 .fold{min-height:100vh;min-height:100svh;display:flex;flex-direction:column}
 .hero{position:relative;flex:1;min-height:480px;overflow:hidden;color:#fff;padding:0;
   background:url("assets/hero.jpg") right center/cover no-repeat,linear-gradient(180deg,#5aaff8,#6ebbfb)}
-.nav{position:relative;z-index:2;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:20px 40px}
-.nav-links{display:flex;gap:36px;font-weight:600;font-size:15px;white-space:nowrap}
+.nav{position:relative;z-index:2;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:22px 48px}
+.nav-links{display:flex;align-items:center;gap:clamp(24px,3.4vw,52px);font-weight:600;font-size:15px;white-space:nowrap}
+.nav-right{justify-self:end}
 .nav-links a:hover{opacity:.8}
 .logo{display:block;height:34px}.logo img{height:100%}
-.call{justify-self:end;border:1.5px solid #fff;border-radius:999px;padding:10px 42px;font-weight:600;font-size:15px;transition:background .2s,color .2s}
+.call{border:1.5px solid #fff;border-radius:999px;padding:10px 42px;font-weight:600;font-size:15px;transition:background .2s,color .2s}
 .call:hover{background:#fff;color:#3f95ea}
 .copy{position:absolute;z-index:2;left:40px;top:50%;transform:translateY(-8%)}
 .copy h1{font-weight:800;color:var(--coral);text-transform:uppercase;white-space:nowrap;font-size:clamp(48px,7.2vw,92px);line-height:1;letter-spacing:-1px}
@@ -290,7 +291,7 @@ footer a:hover{color:#fff}
 }
 @media(max-width:900px){
   .nav{grid-template-columns:auto 1fr auto;padding:16px 20px;gap:12px}
-  .nav-links{display:none}.call{grid-column:3;padding:9px 24px}
+  .nav-left,.nav-right .nl{display:none}.nav-right{grid-column:3}.call{padding:9px 24px}
   .hero{background-position:70% bottom;background-size:auto 55%,cover;background-image:url("assets/hero.jpg"),linear-gradient(180deg,#5aaff8,#6ebbfb);background-repeat:no-repeat}
   .copy{left:20px;right:20px;top:110px;transform:none}
   .copy h1{font-size:clamp(40px,12.5vw,70px)}
@@ -313,15 +314,17 @@ footer a:hover{color:#fff}
 <div class="fold">
 <header class="hero">
   <nav class="nav">
-    <div class="nav-links">
+    <div class="nav-links nav-left">
       <a href="#pricing">Pricing</a>
       <a href="#process">The Process</a>
       <a href="our-customers.html">Our Customers</a>
-      <a href="#roi">ROI</a>
-      <a href="#contact">Contact Us</a>
     </div>
     <a class="logo" href="#" aria-label="Cupco"><img src="assets/logo-white.png" alt="Cupco"></a>
-    <a class="call" href="tel:+61416888639">Call Now</a>
+    <div class="nav-links nav-right">
+      <a href="#roi" class="nl">ROI</a>
+      <a href="#contact" class="nl">Contact Us</a>
+      <a class="call" href="tel:+61416888639">Call Now</a>
+    </div>
   </nav>
   <div class="copy">
     <h1>Custom Cups</h1>
